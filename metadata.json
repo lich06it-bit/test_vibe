@@ -1,0 +1,6 @@
+{
+  "name": "Mô phỏng 3D Nước Đá Tan Chảy",
+  "description": "Mô phỏng 3D tương tác theo thời gian thực về hiện tượng vật lý tan chảy của nước đá, biến đổi pha H2O và truyền nhiệt.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
