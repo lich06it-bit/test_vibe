@@ -34,7 +34,7 @@ export const TelemetryPanel: React.FC<Props> = ({ physics, history }) => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
         <div className="p-3 rounded-xl bg-black/40 border border-white/10 flex flex-col">
           <span className="text-[10px] uppercase font-mono tracking-wider font-semibold text-slate-400">Nhiệt Độ Đá</span>
-          <span className="text-xl font-bold font-mono text-cyan-400">
+          <span className="text-xl font-bold font-mono text-orange-400">
             {physics.iceTemp.toFixed(1)}°C
           </span>
           <span className="text-[10px] text-slate-500 font-mono">Trạng thái: {physics.phase === 'melting_phase' ? 'Chuyển Pha (0°C)' : 'Thể Rắn'}</span>
@@ -69,7 +69,7 @@ export const TelemetryPanel: React.FC<Props> = ({ physics, history }) => {
       <div className="p-3.5 rounded-xl bg-black/30 border border-white/10">
         <div className="flex items-center justify-between mb-2">
           <h4 className="text-xs font-semibold text-slate-300">Đồ Thị Nhiệt Độ T(t) - Quan Sát Đoạn Bằng 0°C (Ẩn Nhiệt)</h4>
-          <span className="text-[10px] font-mono text-cyan-400">0°C = Điểm nóng chảy</span>
+          <span className="text-[10px] font-mono text-orange-400">0°C = Điểm nóng chảy</span>
         </div>
 
         <div className="h-44 w-full">
@@ -83,9 +83,9 @@ export const TelemetryPanel: React.FC<Props> = ({ physics, history }) => {
                 itemStyle={{ color: '#e2e8f0' }}
               />
               <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '4px' }} />
-              <ReferenceLine y={0} stroke="#22d3ee" strokeDasharray="3 3" label={{ value: '0°C Điểm Nóng Chảy', fill: '#22d3ee', fontSize: 10 }} />
-              <Line type="monotone" dataKey="iceTemp" name="Nhiệt độ Đá (°C)" stroke="#22d3ee" strokeWidth={2} dot={false} />
-              <Line type="monotone" dataKey="waterTemp" name="Nhiệt độ Nước (°C)" stroke="#f59e0b" strokeWidth={2} dot={false} />
+              <ReferenceLine y={0} stroke="#f97316" strokeDasharray="3 3" label={{ value: '0°C Điểm Nóng Chảy', fill: '#f97316', fontSize: 10 }} />
+              <Line type="monotone" dataKey="iceTemp" name="Nhiệt độ Đá (°C)" stroke="#f97316" strokeWidth={2} dot={false} />
+              <Line type="monotone" dataKey="waterTemp" name="Nhiệt độ Nước (°C)" stroke="#38bdf8" strokeWidth={2} dot={false} />
             </LineChart>
           </ResponsiveContainer>
         </div>

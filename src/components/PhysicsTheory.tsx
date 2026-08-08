@@ -5,21 +5,21 @@ export const PhysicsTheory: React.FC = () => {
   return (
     <div className="flex flex-col gap-4 p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-xl shadow-xl text-slate-200">
       <div className="flex items-center gap-2 border-b border-white/10 pb-3">
-        <BookOpen className="w-5 h-5 text-cyan-400" />
+        <BookOpen className="w-5 h-5 text-orange-400" />
         <h2 className="text-xs font-bold uppercase tracking-widest text-slate-100 font-mono">Cơ Sở Vật Lý & Công Thức Nhiệt Động Học</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
         {/* Card 1: Ẩn Nhiệt Nóng Chảy */}
         <div className="p-3.5 rounded-xl bg-black/30 border border-white/10 flex flex-col gap-1.5">
-          <div className="flex items-center gap-1.5 font-semibold text-cyan-400 font-mono text-[11px] uppercase tracking-wider">
+          <div className="flex items-center gap-1.5 font-semibold text-orange-400 font-mono text-[11px] uppercase tracking-wider">
             <Atom className="w-4 h-4" />
             Ẩn Nhiệt Nóng Chảy (Lf = 334 J/g)
           </div>
           <p className="text-slate-300 leading-relaxed">
-            Khi khối đá đạt <span className="text-cyan-300 font-semibold font-mono">0°C</span>, toàn bộ nhiệt lượng hấp thụ được sử dụng để phá vỡ các liên kết Hydro giữa các phân tử H₂O mà <span className="text-amber-400 font-semibold">KHÔNG làm tăng nhiệt độ</span>.
+            Khi khối đá đạt <span className="text-orange-300 font-semibold font-mono">0°C</span>, toàn bộ nhiệt lượng hấp thụ được sử dụng để phá vỡ các liên kết Hydro giữa các phân tử H₂O mà <span className="text-amber-400 font-semibold">KHÔNG làm tăng nhiệt độ</span>.
           </p>
-          <div className="p-2 rounded-lg bg-black/60 font-mono text-[11px] text-cyan-200 border border-white/10">
+          <div className="p-2 rounded-lg bg-black/60 font-mono text-[11px] text-orange-200 border border-white/10">
             Q = m · Lf + m · c · ΔT
           </div>
         </div>
@@ -50,7 +50,7 @@ export const PhysicsTheory: React.FC = () => {
             Hạ Điểm Đóng Băng Của Muối (ΔTf)
           </div>
           <p className="text-slate-300 leading-relaxed">
-            Các ion Na⁺ và Cl⁻ chen vào giữa các phân tử H₂O, ngăn cản sự hình thành tinh thể băng. Nhờ đó điểm nóng chảy giảm xuống dưới <span className="text-cyan-300 font-mono font-semibold">0°C</span> (xuống tận <span className="text-cyan-300 font-mono font-semibold">-21°C</span>), giúp đá tan chảy ngay cả trong môi trường lạnh rét.
+            Các ion Na⁺ và Cl⁻ chen vào giữa các phân tử H₂O, ngăn cản sự hình thành tinh thể băng. Nhờ đó điểm nóng chảy giảm xuống dưới <span className="text-orange-300 font-mono font-semibold">0°C</span> (xuống tận <span className="text-orange-300 font-mono font-semibold">-21°C</span>), giúp đá tan chảy ngay cả trong môi trường lạnh rét.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export const PhysicsTheory: React.FC = () => {
             Mật Độ Khối Lượng Tinh Thể
           </div>
           <p className="text-slate-300 leading-relaxed">
-            Do cấu trúc tinh thể lục giác rỗng, thể tích của băng tăng lên khi đóng băng. Vì thế khối lượng riêng của băng (<span className="font-mono text-cyan-300 font-semibold">0.917 g/cm³</span>) nhỏ hơn nước lỏng (<span className="font-mono text-cyan-300 font-semibold">1.000 g/cm³</span>), làm băng luôn nổi trên mặt nước!
+            Do cấu trúc tinh thể lục giác rỗng, thể tích của băng tăng lên khi đóng băng. Vì thế khối lượng riêng của băng (<span className="font-mono text-orange-300 font-semibold">0.917 g/cm³</span>) nhỏ hơn nước lỏng (<span className="font-mono text-orange-300 font-semibold">1.000 g/cm³</span>), làm băng luôn nổi trên mặt nước!
           </p>
         </div>
       </div>

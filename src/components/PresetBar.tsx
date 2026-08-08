@@ -28,7 +28,7 @@ export const PresetBar: React.FC<Props> = ({ activePresetId, onSelectPreset }) =
             onClick={() => onSelectPreset(preset)}
             className={`flex items-center gap-2.5 px-3.5 py-2 rounded-2xl text-left whitespace-nowrap transition-all border shrink-0 ${
               isActive
-                ? 'bg-cyan-500/20 border-cyan-500/60 text-cyan-200 shadow-[0_0_12px_rgba(34,211,238,0.3)]'
+                ? 'bg-orange-500/20 border-orange-500/60 text-orange-200 shadow-[0_0_12px_rgba(249,115,22,0.3)]'
                 : 'bg-black/40 border-white/10 text-slate-300 hover:bg-white/5'
             }`}
           >

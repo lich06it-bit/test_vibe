@@ -181,10 +181,10 @@ export const MicroscopicViewer: React.FC<Props> = ({ physics, ambientTemp }) => 
     <div className="flex flex-col gap-3 p-4 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-xl shadow-xl">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
+          <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-ping shadow-[0_0_8px_rgba(249,115,22,0.8)]" />
           <h3 className="text-xs font-bold uppercase tracking-widest text-slate-200 font-mono">Cấu Trúc Vi Mô Phân Tử H₂O</h3>
         </div>
-        <span className="text-[10px] font-mono text-cyan-300 font-medium px-2 py-0.5 rounded-lg bg-cyan-500/20 border border-cyan-500/40">
+        <span className="text-[10px] font-mono text-orange-300 font-medium px-2 py-0.5 rounded-lg bg-orange-500/20 border border-orange-500/40">
           Góc Liên Kết: 104.5°
         </span>
       </div>
@@ -196,7 +196,7 @@ export const MicroscopicViewer: React.FC<Props> = ({ physics, ambientTemp }) => 
         <div className="absolute bottom-2 left-2 flex items-center gap-3 px-2.5 py-1 rounded-lg bg-black/80 text-[10px] text-slate-300 font-mono border border-white/10 backdrop-blur-md">
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-500" /> O (Oxy)</span>
           <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-slate-100" /> H (Hydro)</span>
-          <span className="flex items-center gap-1 text-cyan-400">--- Liên kết H</span>
+          <span className="flex items-center gap-1 text-orange-400">--- Liên kết H</span>
         </div>
       </div>
 

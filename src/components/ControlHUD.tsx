@@ -57,7 +57,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
               onClick={() => onChangeParams({ simSpeed: speed })}
               className={`px-2 py-0.5 rounded-lg text-[11px] font-mono font-medium transition-colors ${
                 params.simSpeed === speed
-                  ? 'bg-cyan-500/30 text-cyan-200 font-bold border border-cyan-500/40 shadow-[0_0_8px_rgba(34,211,238,0.4)]'
+                  ? 'bg-orange-500/30 text-orange-200 font-bold border border-orange-500/40 shadow-[0_0_8px_rgba(249,115,22,0.4)]'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
@@ -73,11 +73,11 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
           onClick={() => onChangeParams({ thermalView: !params.thermalView })}
           className={`flex items-center justify-center gap-2 p-2.5 rounded-xl text-xs font-semibold border transition-all ${
             params.thermalView
-              ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.3)]'
+              ? 'bg-orange-500/20 border-orange-500/50 text-orange-300 shadow-[0_0_12px_rgba(249,115,22,0.3)]'
               : 'bg-black/30 border-white/10 text-slate-300 hover:bg-white/5'
           }`}
         >
-          <Eye className="w-4 h-4 text-cyan-400" />
+          <Eye className="w-4 h-4 text-orange-400" />
           Camera Hồng Ngoại
         </button>
 
@@ -85,11 +85,11 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
           onClick={() => onChangeParams({ soundEnabled: !params.soundEnabled })}
           className={`flex items-center justify-center gap-2 p-2.5 rounded-xl text-xs font-semibold border transition-all ${
             params.soundEnabled
-              ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.3)]'
+              ? 'bg-orange-500/20 border-orange-500/50 text-orange-300 shadow-[0_0_12px_rgba(249,115,22,0.3)]'
               : 'bg-black/30 border-white/10 text-slate-400 hover:bg-white/5'
           }`}
         >
-          {params.soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+          {params.soundEnabled ? <Volume2 className="w-4 h-4 text-orange-400" /> : <VolumeX className="w-4 h-4" />}
           Âm Thanh Giọt Nước
         </button>
       </div>
@@ -97,7 +97,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
       {/* Group 1: Environment & Physics Settings */}
       <div className="flex flex-col gap-3 p-3.5 rounded-xl bg-black/30 border border-white/10">
         <h3 className="text-[11px] font-bold text-slate-300 uppercase tracking-widest flex items-center gap-2 font-mono">
-          <Thermometer className="w-4 h-4 text-cyan-400" />
+          <Thermometer className="w-4 h-4 text-orange-400" />
           Môi Trường & Vật Lý
         </h3>
 
@@ -105,7 +105,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
         <div className="flex flex-col gap-1.5">
           <div className="flex justify-between items-center text-xs">
             <span className="text-slate-300 font-medium">Nhiệt độ Môi trường (T_ambient)</span>
-            <span className="font-mono text-cyan-400 font-bold">{params.ambientTemp}°C</span>
+            <span className="font-mono text-orange-400 font-bold">{params.ambientTemp}°C</span>
           </div>
           <input
             type="range"
@@ -113,7 +113,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
             max="80"
             value={params.ambientTemp}
             onChange={(e) => onChangeParams({ ambientTemp: Number(e.target.value) })}
-            className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+            className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-orange-400"
           />
           <div className="flex justify-between text-[10px] text-slate-500 font-mono">
             <span>-20°C (Đông)</span>
@@ -132,7 +132,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
           <select
             value={params.surfaceMaterial}
             onChange={(e) => onChangeParams({ surfaceMaterial: e.target.value as SurfaceMaterial })}
-            className="w-full px-3 py-1.5 bg-slate-900/90 border border-white/10 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-cyan-500/50"
+            className="w-full px-3 py-1.5 bg-slate-900/90 border border-white/10 rounded-xl text-xs text-slate-200 focus:outline-none focus:border-orange-500/50"
           >
             {Object.values(SURFACES).map((surf) => (
               <option key={surf.id} value={surf.id}>
@@ -145,7 +145,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
         {/* Ice Shape */}
         <div className="flex flex-col gap-1.5">
           <label className="text-xs text-slate-300 font-medium flex items-center gap-1.5">
-            <Box className="w-3.5 h-3.5 text-cyan-400" />
+            <Box className="w-3.5 h-3.5 text-orange-400" />
             Hình Dạng Khối Đá
           </label>
           <div className="grid grid-cols-3 gap-1.5">
@@ -161,7 +161,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
                 onClick={() => onChangeParams({ iceShape: shape.id as IceShape })}
                 className={`py-1.5 px-2 rounded-xl text-[11px] font-medium transition-all text-center border ${
                   params.iceShape === shape.id
-                    ? 'bg-cyan-500/20 border-cyan-500/60 text-cyan-200 font-bold shadow-[0_0_8px_rgba(34,211,238,0.3)]'
+                    ? 'bg-orange-500/20 border-orange-500/60 text-orange-200 font-bold shadow-[0_0_8px_rgba(249,115,22,0.3)]'
                     : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -266,10 +266,10 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
         <div className="flex flex-col gap-1 p-2.5 rounded-xl bg-slate-900/60 border border-white/10">
           <div className="flex justify-between items-center text-xs">
             <span className="text-slate-200 font-medium flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+              <Sparkles className="w-3.5 h-3.5 text-orange-300" />
               Rắc Muối NaCl
             </span>
-            <span className="font-mono text-cyan-300 font-bold">{params.saltAmount}g</span>
+            <span className="font-mono text-orange-300 font-bold">{params.saltAmount}g</span>
           </div>
           <input
             type="range"
@@ -277,7 +277,7 @@ export const ControlHUD: React.FC<Props> = ({ params, onChangeParams, onReset })
             max="30"
             value={params.saltAmount}
             onChange={(e) => onChangeParams({ saltAmount: Number(e.target.value) })}
-            className="w-full h-1 bg-slate-800 rounded appearance-none cursor-pointer accent-cyan-300"
+            className="w-full h-1 bg-slate-800 rounded appearance-none cursor-pointer accent-orange-300"
           />
           <p className="text-[10px] text-slate-400 italic">
             {params.saltAmount > 0

@@ -147,7 +147,7 @@ export default function App() {
       case 'solid_heating':
         return <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-blue-950/80 text-blue-300 border border-blue-500/30 shadow-[0_0_8px_rgba(59,130,246,0.3)]">❄️ Đang Tăng Nhiệt (Đá Rắn)</span>;
       case 'melting_phase':
-        return <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-950/80 text-cyan-300 border border-cyan-400/50 animate-pulse shadow-[0_0_12px_rgba(34,211,238,0.5)]">💧 Đang Chuyển Pha Nóng Chảy (0°C)</span>;
+        return <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-orange-950/80 text-orange-300 border border-orange-400/50 animate-pulse shadow-[0_0_12px_rgba(249,115,22,0.5)]">💧 Đang Chuyển Pha Nóng Chảy (0°C)</span>;
       case 'liquid_heating':
       case 'fully_melted':
         return <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 shadow-[0_0_8px_rgba(16,185,129,0.3)]">🌊 Đã Tan Thành Nước Lỏng</span>;
@@ -155,21 +155,26 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#020617] text-slate-100 font-sans antialiased selection:bg-cyan-500 selection:text-black relative overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-[#020617] text-slate-100 font-sans antialiased selection:bg-orange-500 selection:text-black relative overflow-x-hidden">
       {/* Immersive UI Radial Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0ea5e922,transparent_60%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#f9731622,transparent_60%)] pointer-events-none" />
 
       {/* Top Header */}
-      <header className="sticky top-0 z-30 flex items-center justify-between px-6 py-3 bg-slate-900/40 border-b border-white/10 backdrop-blur-md">
+      <header className="sticky top-0 z-30 flex flex-wrap items-center justify-between px-6 py-3 bg-slate-900/40 border-b border-white/10 backdrop-blur-md gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] animate-pulse" />
+          <div className="w-3.5 h-3.5 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.9)] animate-pulse" />
           <div>
-            <h1 className="text-base font-bold tracking-widest uppercase text-slate-100 flex items-center gap-2">
-              ICE PHASE SIMULATOR 3D
-              <span className="text-[10px] bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30 font-mono tracking-widest">
+            <div className="flex items-center gap-2">
+              <h1 className="text-base font-bold tracking-widest uppercase text-slate-100 flex items-center gap-2">
+                ICE PHASE SIMULATOR 3D
+              </h1>
+              <span className="text-[10px] bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded border border-orange-500/30 font-mono tracking-widest">
                 RT-3D ENGINE
               </span>
-            </h1>
+              <span className="text-[11px] font-mono font-semibold text-orange-400 bg-orange-950/80 px-2.5 py-0.5 rounded-full border border-orange-500/40 shadow-[0_0_8px_rgba(249,115,22,0.2)]">
+                Tác giả: LịchTT
+              </span>
+            </div>
             <p className="text-xs text-slate-400">Mô phỏng nhiệt động học & chuyển pha H₂O thời gian thực</p>
           </div>
         </div>
@@ -180,7 +185,7 @@ export default function App() {
 
           <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-black/40 border border-white/10 font-mono text-xs">
             <span className="text-slate-400 text-[10px] uppercase tracking-wider">Thời gian:</span>
-            <span className="text-cyan-400 font-bold">{formatTime(physics.timeElapsed)}</span>
+            <span className="text-orange-400 font-bold">{formatTime(physics.timeElapsed)}</span>
           </div>
 
           <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-black/40 border border-white/10 font-mono text-xs">
@@ -195,11 +200,11 @@ export default function App() {
             onClick={() => setActiveTab('3d')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === '3d'
-                ? 'bg-cyan-600/30 border border-cyan-500/60 text-cyan-200 shadow-[0_0_10px_rgba(34,211,238,0.3)]'
+                ? 'bg-orange-500/30 border border-orange-500/60 text-orange-200 shadow-[0_0_10px_rgba(249,115,22,0.3)]'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Box className="w-4 h-4" />
+            <Box className="w-4 h-4 text-orange-400" />
             <span className="hidden sm:inline">Toàn Cảnh 3D</span>
           </button>
 
@@ -207,11 +212,11 @@ export default function App() {
             onClick={() => setActiveTab('split')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === 'split'
-                ? 'bg-cyan-600/30 border border-cyan-500/60 text-cyan-200 shadow-[0_0_10px_rgba(34,211,238,0.3)]'
+                ? 'bg-orange-500/30 border border-orange-500/60 text-orange-200 shadow-[0_0_10px_rgba(249,115,22,0.3)]'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            <Activity className="w-4 h-4" />
+            <Activity className="w-4 h-4 text-orange-400" />
             <span className="hidden sm:inline">3D + Đồ Thị & Phân Tử</span>
           </button>
 
@@ -219,11 +224,11 @@ export default function App() {
             onClick={() => setActiveTab('theory')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
               activeTab === 'theory'
-                ? 'bg-cyan-600/30 border border-cyan-500/60 text-cyan-200 shadow-[0_0_10px_rgba(34,211,238,0.3)]'
+                ? 'bg-orange-500/30 border border-orange-500/60 text-orange-200 shadow-[0_0_10px_rgba(249,115,22,0.3)]'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            <BookOpen className="w-4 h-4" />
+            <BookOpen className="w-4 h-4 text-orange-400" />
             <span className="hidden sm:inline">Lý Thuyết Vật Lý</span>
           </button>
         </div>
@@ -250,7 +255,7 @@ export default function App() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => handleChangeParams({ isPaused: !params.isPaused })}
-                  className="p-2.5 rounded-lg bg-cyan-600/30 hover:bg-cyan-600/50 border border-cyan-500/50 text-cyan-200 transition-all shadow-[0_0_12px_rgba(34,211,238,0.3)]"
+                  className="p-2.5 rounded-lg bg-orange-600/30 hover:bg-orange-600/50 border border-orange-500/50 text-orange-200 transition-all shadow-[0_0_12px_rgba(249,115,22,0.3)]"
                 >
                   {params.isPaused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
                 </button>
@@ -273,7 +278,7 @@ export default function App() {
 
               <div className="hidden sm:flex items-center gap-2">
                 <span className="text-[10px] text-slate-400 font-mono uppercase tracking-wider">Tốc độ:</span>
-                <span className="text-xs font-bold text-cyan-400 font-mono">{params.simSpeed}x</span>
+                <span className="text-xs font-bold text-orange-400 font-mono">{params.simSpeed}x</span>
               </div>
             </div>
           </div>
@@ -295,8 +300,10 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <footer className="py-4 px-6 bg-slate-900/40 border-t border-white/10 text-center text-xs text-slate-500 font-mono uppercase tracking-widest relative z-10 backdrop-blur-md">
-        Mô Phỏng 3D Đồ Họa Tương Tác Theo Thời Gian Thực • RT-3D Physics Engine • H₂O Phase Transformation
+      <footer className="py-4 px-6 bg-slate-900/40 border-t border-white/10 text-center text-xs text-slate-400 font-mono uppercase tracking-widest relative z-10 backdrop-blur-md flex flex-wrap items-center justify-between gap-2">
+        <span>Mô Phỏng 3D Nước Đá Tan Chảy • RT-3D Physics Engine</span>
+        <span className="text-orange-400 font-bold tracking-wider">Tác giả: LịchTT</span>
+        <span>H₂O Phase Transformation</span>
       </footer>
     </div>
   );
